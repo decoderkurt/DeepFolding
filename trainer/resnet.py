@@ -135,10 +135,10 @@ class Resnet:
             left_1d = tf.einsum('abcd,de->abce', out_1d, ones)
             left_1d = tf.transpose(left_1d, perm=[0,1,3,2])
             right_1d = tf.transpose(left_1d, perm=[0,2,1,3])
-            print '1d shape', left_1d.shape, right_1d.shape
+            print ('1d shape', left_1d.shape, right_1d.shape)
 
             input_2d = tf.concat([x2d, left_1d, right_1d], axis=3)
-            print '2d shape', input_2d.shape
+            print ('2d shape', input_2d.shape)
             
             prev_2d = tf.layers.conv2d(inputs=input_2d, filters=filters_2d,
                     kernel_size=kernel_size_2d, strides=(1,1), padding='same',

@@ -74,9 +74,9 @@ def create_supervised(name_list, oned_feature_dir,\
                         'y'   : _bytes_feature(y.astype(np.int16).tobytes())
                         }))
                 record_writer.write(example.SerializeToString())
-                print name
+                print  (name)
 
-    print total_example_num, total_pos_num + total_neg_num, total_pos_num, total_neg_num
+    print (total_example_num, total_pos_num + total_neg_num, total_pos_num, total_neg_num)
 
 def create_semi(name_list, oned_feature_dir,\
         twod_feature_dir, output_prefix, labeled=True):
@@ -205,10 +205,10 @@ def create_from_ccmpred(name_list,\
                 total_example_num += 1
     pbar.close()
     if distcb_dir is not None:
-        print total_example_num, total_pos_num + total_neg_num,\
-                total_pos_num, total_neg_num
+        print (total_example_num, total_pos_num + total_neg_num,\
+                total_pos_num, total_neg_num)
     else:
-        print total_example_num
+        print (total_example_num)
 
     
 def main():
