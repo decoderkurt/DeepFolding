@@ -64,8 +64,9 @@ def main():
     logger.addHandler(ch)
 
     model_config = parse_model_config(args.model_config)
-    logging.info('train_config: {:s}'.format(args))
-    logging.info('model_config: {:s}'.format(json.dumps(model_config)))
+    print ("********************",args)
+    #logging.info('train_config: {:s}'.format(str(args)))
+    #logging.info('model_config: {:s}'.format(str(json.dumps(model_config))))
 
     if args.alg == 'resn':
         with tf.Session() as sess:
